@@ -1,31 +1,79 @@
-@import url("styles.css?v=20260916-4");
+@import url("styles.css?v=20260916-5");
 
-/* Cache-busting design layer: keeps mobile on the approved Show Kit visual language. */
-@media (max-width: 759px){
-  body{background:#061c1b!important;}
-  .hero{min-height:100svh!important;background:
-    radial-gradient(circle at 78% 16%,rgba(239,111,49,.22),transparent 29%),
-    radial-gradient(circle at 12% 28%,rgba(155,199,182,.10),transparent 26%),
-    linear-gradient(155deg,#0d4b43 0%,#082f2c 39%,#061c1b 78%)!important;
-  }
-  .hero:after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.18;background-image:repeating-linear-gradient(0deg,transparent 0 4px,rgba(255,255,255,.025) 5px),radial-gradient(circle at 12% 85%,rgba(239,111,49,.45) 0 1px,transparent 2px);background-size:auto,17px 17px;mix-blend-mode:screen;}
-  .hero-photo{width:min(106vw,450px)!important;right:-62px!important;bottom:128px!important;border-radius:210px 0 0 30px!important;filter:drop-shadow(-20px 20px 34px rgba(0,0,0,.52)) saturate(1.05) contrast(1.03)!important;}
-  .hero-copy{margin-bottom:348px!important;}
-  .hero h1 span{font-size:clamp(76px,23vw,112px)!important;}
-  .hero h1 strong{font-size:clamp(66px,20vw,98px)!important;}
-  .running-line{box-shadow:0 8px 22px rgba(0,0,0,.28)}
-  .section{padding-top:72px!important;padding-bottom:72px!important;}
-  .section-title:before{content:"";display:block;width:54px;height:5px;background:var(--orange);margin-bottom:15px;transform:skewX(-18deg);box-shadow:18px 0 0 rgba(155,199,182,.6)}
-  .section h2{letter-spacing:-.02em!important;text-shadow:0 2px 0 rgba(0,0,0,.22)}
-  .show-card,.credential-card,.booking-card,.brasil-panel{border-color:rgba(239,111,49,.28)!important;box-shadow:0 20px 46px rgba(0,0,0,.34)!important;}
-  .show-card{clip-path:polygon(1% 0,100% 1%,99% 98%,3% 100%,0 4%)}
-  .show-card h3{color:var(--cream)!important;text-shadow:2px 2px 0 rgba(0,0,0,.24)}
-  .press-grid{gap:18px!important;}
-  .press-clipping{box-shadow:0 18px 42px rgba(0,0,0,.36)!important;clip-path:polygon(1% 1%,99% 0,100% 94%,96% 100%,3% 98%,0 4%)!important;}
-  .press-clipping h3{font-size:23px!important;}
-  .credential-card{background:linear-gradient(145deg,rgba(239,111,49,.10),rgba(9,55,50,.72))!important;}
-  .brasil-panel{background:radial-gradient(circle at 82% 18%,rgba(239,111,49,.22),transparent 28%),linear-gradient(145deg,#0c4942,#071f1e 72%)!important;}
-  .booking-section{background:radial-gradient(circle at 22% 8%,rgba(239,111,49,.22),transparent 31%),#061c1b!important;}
-  .mobile-booking{background:rgba(5,27,26,.97)!important;border-top:1px solid rgba(239,111,49,.38)!important;backdrop-filter:blur(14px)!important;}
-  .mobile-booking-main{background:var(--orange)!important;color:#16100c!important;}
+/* Final art-direction layer: approved Show Kit language on mobile and desktop. */
+:root{--rio:url("https://commons.wikimedia.org/wiki/Special:FilePath/Rio%20de%20Janeiro%20at%20dusk%20with%20the%20Sugarloaf,%20Rio%20de%20Janeiro.jpg?width=1600");--copa:url("https://commons.wikimedia.org/wiki/Special:FilePath/Rio%20de%20Janeiro%20-%20Sugar%20Loaf%20from%20Copacabana%20Beach.jpg?width=1400");--stadium:url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/BRUNO_LIMA_ARENA_PERNAMBUCO_RECIFE_PE.jpg/960px-BRUNO_LIMA_ARENA_PERNAMBUCO_RECIFE_PE.jpg");}
+body{background:#061c1b;}
+.hero{min-height:100svh;background:linear-gradient(180deg,rgba(5,34,32,.20),rgba(5,29,28,.86) 66%,#061c1b 100%),var(--rio) center/cover no-repeat!important;}
+.hero:before{inset:0!important;height:auto!important;transform:none!important;background:linear-gradient(90deg,rgba(6,28,27,.78) 0%,rgba(6,28,27,.35) 47%,rgba(6,28,27,.1) 100%)!important;border:0!important;z-index:-1!important;}
+.hero:after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.18;background-image:repeating-linear-gradient(0deg,transparent 0 4px,rgba(255,255,255,.025) 5px);mix-blend-mode:screen;}
+.hero-photo{z-index:2!important;width:min(67vw,330px)!important;max-height:52vh!important;right:-12px!important;bottom:150px!important;border-radius:18px 0 0 18px!important;box-shadow:-18px 18px 0 rgba(239,111,49,.10),-26px 27px 55px rgba(0,0,0,.48)!important;filter:saturate(.9) contrast(1.05) sepia(.06)!important;}
+.hero-copy{z-index:4!important;margin-bottom:365px!important;max-width:94%!important;}
+.hero h1{line-height:.82!important;max-width:100%!important;}
+.hero h1 span{font-size:clamp(55px,17vw,94px)!important;}
+.hero h1 strong{font-size:clamp(48px,14.8vw,82px)!important;}
+.hero-subtitle{max-width:76%;font-size:12px!important;line-height:1.4!important;}
+.hero-ghost{opacity:.09!important;mix-blend-mode:screen;}
+.hero-symbols{display:none!important;}
+.hero-badges{z-index:5!important;}
+
+.section{overflow:hidden;isolation:isolate;}
+.section:before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(145deg,rgba(6,28,27,.96),rgba(7,36,33,.88));}
+.section:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.08;background-image:repeating-linear-gradient(0deg,transparent 0 5px,rgba(255,255,255,.04) 6px);}
+.section-title:before{content:"";display:block;width:58px;height:5px;background:var(--orange);margin-bottom:15px;transform:skewX(-18deg);box-shadow:19px 0 0 rgba(155,199,182,.6);}
+.section h2{letter-spacing:-.025em!important;text-shadow:0 2px 0 rgba(0,0,0,.25);}
+
+.profile:before{background:linear-gradient(90deg,rgba(6,28,27,.96),rgba(6,28,27,.82)),var(--copa) center/cover no-repeat;}
+.profile .taped-photo{max-width:280px;margin-inline:auto!important;}
+.profile .taped-photo img{aspect-ratio:4/5!important;}
+
+.show-section:before{background:radial-gradient(circle at 80% 12%,rgba(239,111,49,.15),transparent 30%),linear-gradient(145deg,#092f2b,#061c1b 72%);}
+.show-card{border-color:rgba(239,111,49,.30)!important;box-shadow:0 20px 46px rgba(0,0,0,.35)!important;clip-path:polygon(1% 0,100% 1%,99% 98%,3% 100%,0 4%);}
+.show-image{height:205px!important;}
+.show-image img{object-position:center 20%;}
+
+.live-section:before{background:linear-gradient(90deg,rgba(6,28,27,.95),rgba(6,28,27,.76)),var(--rio) center/cover no-repeat;}
+.live-collage{max-width:650px;margin-inline:auto;}
+.live-main{max-height:340px;}
+.live-small{max-height:170px;}
+
+.press-section:before{background:linear-gradient(145deg,#082d29,#061c1b 70%);}
+.press-grid{gap:18px!important;}
+.press-clipping{box-shadow:0 18px 42px rgba(0,0,0,.38)!important;clip-path:polygon(1% 1%,99% 0,100% 94%,96% 100%,3% 98%,0 4%)!important;}
+.press-clipping h3{font-size:23px!important;}
+
+.credential-section:before{background:linear-gradient(100deg,rgba(6,28,27,.97),rgba(6,28,27,.78)),var(--copa) center/cover no-repeat;}
+.credential-card{background:linear-gradient(145deg,rgba(239,111,49,.12),rgba(9,55,50,.80))!important;border-color:rgba(239,111,49,.28)!important;box-shadow:0 18px 42px rgba(0,0,0,.30)!important;}
+
+.brasil-section:before{background:linear-gradient(90deg,rgba(6,28,27,.88),rgba(6,28,27,.58)),var(--stadium) center/cover no-repeat;}
+.brasil-panel{background:linear-gradient(145deg,rgba(12,73,66,.86),rgba(7,31,30,.88))!important;border-color:rgba(239,111,49,.34)!important;box-shadow:0 20px 50px rgba(0,0,0,.38)!important;}
+.brasil-symbols{opacity:.82!important;}
+
+.booking-section:before{background:linear-gradient(100deg,rgba(6,28,27,.95),rgba(6,28,27,.70)),var(--rio) center/cover no-repeat;}
+.booking-card{border-color:rgba(239,111,49,.34)!important;box-shadow:0 22px 54px rgba(0,0,0,.42)!important;}
+
+.mobile-booking{background:rgba(5,27,26,.97)!important;border-top:1px solid rgba(239,111,49,.38)!important;backdrop-filter:blur(14px)!important;}
+.mobile-booking-main{background:var(--orange)!important;color:#16100c!important;}
+
+@media(max-width:759px){
+  .hero{padding-top:82px!important;}
+  .hero-copy{margin-bottom:345px!important;}
+  .hero-photo{width:min(64vw,300px)!important;right:8px!important;bottom:142px!important;max-height:48vh!important;}
+  .micro-copy{font-size:10px!important;}
+  .hero-actions{max-width:88%;}
+  .section{padding-top:66px!important;padding-bottom:66px!important;}
+  .section h2{font-size:clamp(39px,11.8vw,58px)!important;line-height:.94!important;}
+  .section-number{font-size:66px!important;}
+  .profile-layout{gap:20px!important;}
+  .profile .taped-photo{width:72%!important;}
+  .show-card{flex-basis:78vw!important;max-width:310px!important;}
+  .show-card h3{font-size:36px!important;}
+  .live-collage{grid-template-rows:190px auto!important;}
+  .press-clipping{padding:19px 16px 17px!important;}
+  .brasil-panel{padding:24px 18px!important;}
+}
+
+@media(min-width:760px){
+  .hero-photo{width:min(35vw,420px)!important;right:8vw!important;bottom:90px!important;max-height:68vh!important;}
+  .hero-copy{margin-bottom:120px!important;max-width:55%!important;}
+  .profile .taped-photo{max-width:360px;}
 }
