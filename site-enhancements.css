@@ -45,3 +45,20 @@ footer{background:#0d241f;padding:38px 7%;}footer>div{color:#d7ddd4}footer>div a
   footer{padding:32px 22px 112px;display:block}footer>div{margin-top:22px}.mobile-nav{position:fixed;display:flex;z-index:20;bottom:max(10px,env(safe-area-inset-bottom));left:12px;right:12px;background:#fff9edf2;backdrop-filter:blur(16px);border:1px solid #dfd2bc;border-radius:50px;box-shadow:0 8px 30px #001c2530;justify-content:space-around;padding:4px}.mobile-nav a{padding:13px 8px;font-size:10px;font-weight:700;white-space:nowrap}.mobile-contact{background:#102b24!important;color:#fff3e2!important;border-radius:30px;padding:12px 10px!important}
 }
 @media(prefers-reduced-motion:reduce){.moment img,.hero-actions .button,.closing .contact-button{transition:none}}
+
+/* Mobile-first hero: the live photo is visible from the first screen, behind a readable copy block. */
+@media(max-width:700px){
+  .hero{position:relative;display:flex;flex-direction:column;justify-content:flex-end;gap:0;min-height:calc(100svh - 72px);padding:235px 22px 16px;isolation:isolate}
+  .hero-art{position:absolute;z-index:-1;inset:0;width:auto;height:auto;min-height:0;max-height:none;aspect-ratio:auto;margin:0;border-radius:0;box-shadow:none;background:#102b24}
+  .hero-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:54% 27%;opacity:.94}
+  .hero-art::before{inset:0;background:linear-gradient(180deg,#07161008 0%,#07161010 27%,#102b24a6 55%,#102b24 77%,#102b24 100%)}
+  .photo-label{left:16px;top:16px;bottom:auto;transform:none}
+  .hero-text{z-index:3;padding-top:0;text-shadow:0 1px 16px #07161030}
+  .hero .eyebrow{margin-bottom:13px}
+  .hero h1{font-size:clamp(48px,11.5vw,64px);line-height:.94;margin-bottom:13px;letter-spacing:-.075em}
+  .hero-lead{max-width:440px;font-size:13px;line-height:1.5;margin-bottom:5px}
+  .hero-actions{position:relative;z-index:3;gap:12px;margin-top:11px;align-items:center}
+  .hero-actions .button{padding:13px 16px;font-size:11px}
+  .hero-contact{font-size:9px}
+  .hero-bottom{position:relative;z-index:3;margin-top:15px;min-height:0;padding:12px 0 0;border-top:1px solid #ffffff57}
+}
