@@ -1,0 +1,3 @@
+const videos=[...document.querySelectorAll('video')];videos.forEach(v=>v.addEventListener('play',()=>videos.forEach(other=>{if(other!==v)other.pause()})));
+let lang='it';document.querySelector('#language').addEventListener('click',()=>{lang=lang==='it'?'pt':'it';document.documentElement.lang=lang==='pt'?'pt-BR':'it';document.querySelectorAll('[data-it]').forEach(el=>{el.innerHTML=el.dataset[lang]});const b=document.querySelector('#language');b.textContent=lang==='it'?'PT':'IT';b.setAttribute('aria-label',lang==='it'?'Mudar para português':'Passa all’italiano')});
+document.querySelector('.more').addEventListener('toggle',e=>{if(!e.target.open)e.target.querySelectorAll('video').forEach(v=>v.pause())});
